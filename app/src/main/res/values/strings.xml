@@ -3,4 +3,6 @@
     <string name="coordinatesLabel">Voici les coordonnées GPS de votre position</string>
     <string name="longLabel">Longitude</string>
     <string name="latLabel">Latitude</string>
+    <string name="bg_rdtroniclogo_contentDescription">bg_rdtronicLogo</string>
+    <string name="rdtroniclogo_contentdescription">rdtroniclogo</string>
 </resources>

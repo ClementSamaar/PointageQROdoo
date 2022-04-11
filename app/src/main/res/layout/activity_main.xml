@@ -90,6 +90,7 @@
         />
 
     <ImageView
+        android:contentDescription="@string/bg_rdtroniclogo_contentDescription"
         android:id="@+id/bg_rdtronicLogo"
         android:layout_width="match_parent"
         android:layout_height="@dimen/bgRdtronicLogo_height"
@@ -102,6 +103,7 @@
         />
 
     <ImageView
+        android:contentDescription="@string/rdtroniclogo_contentdescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 

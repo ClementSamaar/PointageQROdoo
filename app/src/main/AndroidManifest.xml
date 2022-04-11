@@ -14,8 +14,9 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+                <action android:name="android.intent.action.INSERT_OR_EDIT" />
                 <category android:name="android.intent.category.LAUNCHER" />
+                <data android:mimeType="text/plain"/>
             </intent-filter>
         </activity>
     </application>

@@ -10,5 +10,4 @@
     <dimen name="coordinates_marginLeft">10dp</dimen>
     <dimen name="coordinates_fontSize">10pt</dimen>
     <dimen name="bgRdtronicLogo_height">70dp</dimen>
-    <dimen name="rdtronicLogo_marginBottom">5dp</dimen>
 </resources>
