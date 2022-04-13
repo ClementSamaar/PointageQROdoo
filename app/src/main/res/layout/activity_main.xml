@@ -95,7 +95,7 @@
         android:layout_height="wrap_content"
 
         android:backgroundTint="@color/rdtronic_orange"
-        android:text="@string/requete_permission_localisation"
+        android:text="@string/permReq_localisation"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@id/bg_rdtronicLogo"
 
@@ -105,7 +105,7 @@
 
 
     <ImageView
-        android:contentDescription="@string/bg_rdtroniclogo_contentDescription"
+        android:contentDescription="@string/rdtroniclogoBg_contentDescription"
         android:id="@+id/bg_rdtronicLogo"
         android:layout_width="match_parent"
         android:layout_height="@dimen/bgRdtronicLogo_height"
