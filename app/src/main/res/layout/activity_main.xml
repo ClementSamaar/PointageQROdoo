@@ -30,7 +30,7 @@
         app:layout_constraintTop_toBottomOf="@id/app_title"
         android:layout_marginTop="@dimen/coordinatesLabel_marginTop"
 
-        android:text="@string/coordinatesLabel"
+        android:text="@string/coordinatesLabel_onGranted"
         android:textSize="@dimen/coordinatesLabel_fontSize"
         android:textAlignment="center"
         />
@@ -88,6 +88,21 @@
 
         android:textSize="@dimen/coordinates_fontSize"
         />
+
+    <Button
+        android:id="@+id/permissionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:backgroundTint="@color/rdtronic_orange"
+        android:text="@string/requete_permission_localisation"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@id/bg_rdtronicLogo"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/latCoordinate" />
+
 
     <ImageView
         android:contentDescription="@string/bg_rdtroniclogo_contentDescription"

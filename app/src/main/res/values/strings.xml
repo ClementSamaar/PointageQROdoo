@@ -1,8 +1,10 @@
 <resources>
     <string name="app_name">GeoLoc</string>
-    <string name="coordinatesLabel">Voici les coordonnées GPS de votre position</string>
+    <string name="coordinatesLabel_onGranted">Voici les coordonnées GPS de votre position</string>
     <string name="longLabel">Longitude</string>
     <string name="latLabel">Latitude</string>
     <string name="bg_rdtroniclogo_contentDescription">bg_rdtronicLogo</string>
     <string name="rdtroniclogo_contentdescription">rdtroniclogo</string>
+    <string name="requete_permission_localisation">Autoriser l\'utilisation de la localisation de l\'appareil</string>
+    <string name="coordinatesLabel_onDenied">La localisation GPS est désactivée</string>
 </resources>
