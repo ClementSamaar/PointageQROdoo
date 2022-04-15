@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DataRetriever">
+
+    <TextView
+        android:id="@+id/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="@dimen/dataAppName_marginTop"
+
+        android:text="@string/app_name"
+        android:textSize="@dimen/appName_fontSize"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/dataRetrievedLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_name"
+
+        android:text="@string/dataRetrievedLabel"
+        android:textSize="@dimen/dataRetrievedLabel_fontSize"
+        />
+
+    <TextView
+        android:id="@+id/dataRetrieved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dataRetrievedLabel"
+
+        android:textSize="@dimen/dataRetrieved_fontSize"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        app:layout_constraintBottom_toTopOf="@id/bg_rdtronicLogo">
+
+        <Button
+            android:id="@+id/dataRetrievedToGeoLoc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/bg_rdtronicLogo"
+            android:layout_marginRight="@dimen/menuButtons_marginHorizontal"
+            android:layout_marginLeft="@dimen/menuButtons_marginHorizontal"
+
+            android:backgroundTint="@color/rdtronic_red"
+            android:text="@string/gotoGeoLocActivity"
+            android:textColor="#FFFFFF"
+            style="?android:attr/buttonBarButtonStyle" />
+
+        <Button
+            android:id="@+id/dataRetrievedToQrCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            app:layout_constraintLeft_toRightOf="@id/dataRetrievedToGeoLoc"
+            app:layout_constraintBottom_toTopOf="@id/bg_rdtronicLogo"
+            android:layout_marginLeft="@dimen/menuButtons_marginHorizontal"
+            android:layout_marginRight="@dimen/menuButtons_marginHorizontal"
+
+            android:backgroundTint="@color/rdtronic_red"
+            android:text="@string/gotoQrCodeActivity"
+            android:textColor="#FFFFFF"
+            style="?android:attr/buttonBarButtonStyle" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:contentDescription="@string/rdtroniclogoBg_contentDescription"
+        android:id="@+id/bg_rdtronicLogo"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/bgRdtronicLogo_height"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        android:src="@drawable/bg_rdtroniclogo"
+        />
+
+    <ImageView
+        android:contentDescription="@string/rdtroniclogo_contentdescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/bg_rdtronicLogo"
+        app:layout_constraintTop_toTopOf="@+id/bg_rdtronicLogo"
+
+        android:src="@drawable/rdtroniclogo"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

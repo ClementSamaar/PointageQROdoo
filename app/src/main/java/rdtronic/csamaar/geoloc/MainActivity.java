@@ -8,7 +8,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -30,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     };
 
     private TextView coordinatesLabel, longLabel, latLabel, longCoordinate, latCoordinate;
-    private Button permReqButton, qrCodeButton;
+    private Button permReqButton;
 
     private FusedLocationProviderClient fusedLocationClient;
 
@@ -40,7 +39,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initializeViews();
+        display();
+    }
 
+    private void initializeViews(){
         coordinatesLabel = findViewById(R.id.coordinatesLabel);
         longLabel = findViewById(R.id.longLabel);
         latLabel = findViewById(R.id.latLabel);
@@ -48,15 +51,8 @@ public class MainActivity extends AppCompatActivity {
         latCoordinate = findViewById(R.id.latCoordinate);
         permReqButton = findViewById(R.id.locPermissionButton);
         permReqButton.setOnClickListener(view -> requestLocationPermission());
-        qrCodeButton = findViewById(R.id.qrCode);
-        qrCodeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent gameActivityIntent = new Intent(MainActivity.this, QrCodeReader.class);
-                startActivity(gameActivityIntent);
-            }
-        });
-        display();
+        Button qrCodeButton = findViewById(R.id.mainToQrCode);
+        qrCodeButton.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, QrCodeReader.class)));
     }
 
     private final LocationCallback locationCallback = new LocationCallback() {
@@ -68,8 +64,6 @@ public class MainActivity extends AppCompatActivity {
                 if (location != null) {
                     longitude = String.valueOf(location.getLongitude());
                     latitude = String.valueOf(location.getLatitude());
-                    Log.v("LONGITUDE", String.valueOf(longitude));
-                    Log.v("LATITUDE", String.valueOf(latitude));
                     display();
                     if (longitude != null && latitude != null) fusedLocationClient.removeLocationUpdates(locationCallback);
                 }
