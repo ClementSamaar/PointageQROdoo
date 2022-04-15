@@ -1,25 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="rdtronic.csamaar.geoloc">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="rdtronic.csamaar.geoloc">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+
     <application
-    android:allowBackup="true"
-    android:icon="@mipmap/ic_launcher"
-    android:label="@string/app_name"
-    android:roundIcon="@mipmap/ic_launcher_round"
-    android:supportsRtl="true"
-    android:theme="@style/Theme.GeoLoc">
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.GeoLoc">
+
         <activity
-        android:name=".MainActivity"
-        android:exported="true">
+            android:name=".MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.INSERT_OR_EDIT" />
                 <category android:name="android.intent.category.LAUNCHER" />
-                <data android:mimeType="text/plain"/>
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".QrCodeReader"
+            android:exported="false" />
+
     </application>
+
 </manifest>

@@ -8,10 +8,15 @@
     <string name="permReq_localisation">Autoriser l\'utilisation de la localisation de l\'appareil</string>
     <string name="coordinatesLabel_onDenied">La localisation GPS est désactivée</string>
     <string name="permRationale_title">Autorisation necessaire</string>
+    <string name="locPermRationale_msg">GeoLoc à besoin d\'accéder à votre position afin de pouvoir fonctionner.</string>
     <string name="permRationale_posBtn">OK</string>
     <string name="permRationale_negBtn">Annuler</string>
     <string name="coordinatesLabel_onWait">Veuillez patienter …</string>
-    <string name="permissionDenied_toastText">Votre localisation ne sera pas utilisée. Celle-ci est nécessaire au bon fonctionnement de l\'application</string>
-    <string name="permissionGranted_toastText">GeoLoc utilise votre position</string>
-    <string name="permRationale_msg">GeoLoc à besoin d\'accéder à votre position afin de pouvoir fonctionner.</string>
+    <string name="locPermissionDenied_toastText">Votre localisation ne sera pas utilisée. Celle-ci est nécessaire au bon fonctionnement de l\'application</string>
+    <string name="locPermissionGranted_toastText">GeoLoc utilise votre position</string>
+
+    <string name="permReq_camera">Autoriser l\'utilisation de la caméra de l\'appareil</string>
+    <string name="camPermRationale_msg">GeoLoc à besoin d\'accéder à votre caméra pour réaliser le scan du QR Code.</string>
+    <string name="camPermissionDenied_toastText">Votre caméra ne sera pas utilisée. Celle-ci est nécessaire afin de scanner le QR Code</string>
+    <string name="camPermissionGranted_toastText">GeoLoc utilise votre caméra</string>
 </resources>

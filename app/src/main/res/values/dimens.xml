@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="appTitle_marginTop">150dp</dimen>
-    <dimen name="appTitle_fontSize">22pt</dimen>
+    <!-- MAIN ACTIVITY -->
+    <dimen name="mainAppTitle_marginTop">150dp</dimen>
+    <dimen name="mainAppTitle_fontSize">22pt</dimen>
     <dimen name="coordinatesLabel_marginTop">30dp</dimen>
     <dimen name="coordinatesLabel_fontSize">10pt</dimen>
     <dimen name="longAndLatLabel_marginLeft">15dp</dimen>
@@ -10,4 +11,9 @@
     <dimen name="coordinates_marginLeft">10dp</dimen>
     <dimen name="coordinates_fontSize">10pt</dimen>
     <dimen name="bgRdtronicLogo_height">70dp</dimen>
+
+    <!-- QR CODE READER ACTIVITY -->
+    <dimen name="qrAppName_marginTop_onGranted">40dp</dimen>
+    <dimen name="qrAppName_marginTop_onDenied">300dp</dimen>
+    <dimen name="cameraPermissionButton_marginBottom">50dp</dimen>
 </resources>

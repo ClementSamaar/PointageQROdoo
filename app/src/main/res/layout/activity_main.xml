@@ -14,10 +14,10 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="@dimen/appTitle_marginTop"
+        android:layout_marginTop="@dimen/mainAppTitle_marginTop"
 
         android:text="@string/app_name"
-        android:textSize="@dimen/appTitle_fontSize"
+        android:textSize="@dimen/mainAppTitle_fontSize"
         />
 
     <TextView
@@ -90,7 +90,7 @@
         />
 
     <Button
-        android:id="@+id/permissionButton"
+        android:id="@+id/locPermissionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -103,6 +103,19 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/latCoordinate" />
 
+    <Button
+        android:id="@+id/qrCode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:backgroundTint="@color/rdtronic_orange"
+        android:text="QR Code"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@id/bg_rdtronicLogo"
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/locPermissionButton" />
 
     <ImageView
         android:contentDescription="@string/rdtroniclogoBg_contentDescription"
