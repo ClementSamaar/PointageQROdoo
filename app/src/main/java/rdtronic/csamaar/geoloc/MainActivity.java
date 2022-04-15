@@ -4,10 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import android.Manifest;
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -39,15 +39,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initializeViews();
+        display();
+    }
 
+    private void initializeViews(){
         coordinatesLabel = findViewById(R.id.coordinatesLabel);
         longLabel = findViewById(R.id.longLabel);
         latLabel = findViewById(R.id.latLabel);
         longCoordinate = findViewById(R.id.longCoordinate);
         latCoordinate = findViewById(R.id.latCoordinate);
-        permReqButton = findViewById(R.id.permissionButton);
+        permReqButton = findViewById(R.id.locPermissionButton);
         permReqButton.setOnClickListener(view -> requestLocationPermission());
-        display();
+        Button qrCodeButton = findViewById(R.id.mainToQrCode);
+        qrCodeButton.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, QrCodeReader.class)));
     }
 
     private final LocationCallback locationCallback = new LocationCallback() {
@@ -59,8 +64,6 @@ public class MainActivity extends AppCompatActivity {
                 if (location != null) {
                     longitude = String.valueOf(location.getLongitude());
                     latitude = String.valueOf(location.getLatitude());
-                    Log.v("LONGITUDE", String.valueOf(longitude));
-                    Log.v("LATITUDE", String.valueOf(latitude));
                     display();
                     if (longitude != null && latitude != null) fusedLocationClient.removeLocationUpdates(locationCallback);
                 }
@@ -112,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
         if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_COARSE_LOCATION)
                 || ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_COARSE_LOCATION)) {
             new AlertDialog.Builder(this).setTitle(R.string.permRationale_title)
-                    .setMessage(R.string.permRationale_msg)
+                    .setMessage(R.string.locPermRationale_msg)
                     .setPositiveButton(R.string.permRationale_posBtn, (dialogInterface, i) -> ActivityCompat.requestPermissions(MainActivity.this, permissionList, 0))
                     .setNegativeButton(R.string.permRationale_negBtn, (dialogInterface, i) -> dialogInterface.dismiss())
                     .create()
@@ -130,10 +133,10 @@ public class MainActivity extends AppCompatActivity {
             if (grantResults.length > 0
                     && grantResults[0] == PackageManager.PERMISSION_GRANTED
                     && grantResults[1] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(MainActivity.this, R.string.permissionGranted_toastText, Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, R.string.locPermissionGranted_toastText, Toast.LENGTH_SHORT).show();
                 display();
             } else {
-                Toast.makeText(MainActivity.this, R.string.permissionDenied_toastText, Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, R.string.locPermissionDenied_toastText, Toast.LENGTH_SHORT).show();
             }
         }
     }

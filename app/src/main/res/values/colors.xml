@@ -8,5 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="rdtronic_orange">#D08000</color>
+    <color name="rdtronic_orange">#FF8000</color>
+    <color name="rdtronic_red">#FF0000</color>
 </resources>

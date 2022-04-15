@@ -7,17 +7,18 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/app_title"
+        android:id="@+id/app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="@dimen/appTitle_marginTop"
+        android:layout_marginTop="@dimen/mainAppName_marginTop"
 
         android:text="@string/app_name"
-        android:textSize="@dimen/appTitle_fontSize"
+        android:textSize="@dimen/appName_fontSize"
+        android:textColor="@color/black"
         />
 
     <TextView
@@ -27,7 +28,7 @@
 
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/app_title"
+        app:layout_constraintTop_toBottomOf="@id/app_name"
         android:layout_marginTop="@dimen/coordinatesLabel_marginTop"
 
         android:text="@string/coordinatesLabel_onGranted"
@@ -90,19 +91,34 @@
         />
 
     <Button
-        android:id="@+id/permissionButton"
+        android:id="@+id/locPermissionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
         android:backgroundTint="@color/rdtronic_orange"
-        android:text="@string/permReq_localisation"
+        android:text="@string/locPermReqBtn"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@id/bg_rdtronicLogo"
 
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/latCoordinate" />
+        app:layout_constraintTop_toBottomOf="@id/latCoordinate"
+        />
 
+    <Button
+        android:id="@+id/mainToQrCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:backgroundTint="@color/rdtronic_red"
+        android:text="@string/gotoQrCodeActivity"
+        android:textColor="#FFFFFF"
+
+
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/bg_rdtronicLogo"
+        />
 
     <ImageView
         android:contentDescription="@string/rdtroniclogoBg_contentDescription"
