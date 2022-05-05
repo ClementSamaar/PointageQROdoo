@@ -1,5 +1,7 @@
 package rdtronic.csamaar.geoloc;
 
+import static java.util.Collections.emptyMap;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
@@ -22,6 +24,7 @@ import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
 
 import java.io.IOException;
+import java.net.URL;
 
 public class QrCodeReader extends AppCompatActivity {
 
@@ -120,9 +123,7 @@ public class QrCodeReader extends AppCompatActivity {
             }
 
             @Override
-            public void surfaceDestroyed(SurfaceHolder holder) {
-                cameraSource.stop();
-            }
+            public void surfaceDestroyed(SurfaceHolder holder) { cameraSource.stop(); }
         });
 
         barcodeDetector.setProcessor(new Detector.Processor<Barcode>() {
