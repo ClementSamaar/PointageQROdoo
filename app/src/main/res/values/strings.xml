@@ -9,6 +9,7 @@
     <string name="gotoQrCodeActivity">QR Code</string>
     <string name="gotoGeoLocActivity">GeoLoc</string>
 
+    <string name="error_odoo_server_error">Odoo Server Error</string>
     <!-- MAIN ACTIVITY -->
     <string name="coordinatesLabel_onGranted">Voici les coordonnées GPS de votre position</string>
     <string name="coordinatesLabel_onDenied">La localisation GPS est désactivée</string>

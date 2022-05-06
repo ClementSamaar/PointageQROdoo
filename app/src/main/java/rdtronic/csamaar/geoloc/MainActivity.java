@@ -1,19 +1,21 @@
 package rdtronic.csamaar.geoloc;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.annotation.SuppressLint;
+
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationCallback;
@@ -41,6 +43,64 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         initializeViews();
         display();
+        ReqXMLRPC clientOdoo = new ReqXMLRPC();
+        /*Thread xmlReqThread = */new Thread(() -> {
+            int uid = clientOdoo.authenticate();
+            Log.v("UID", String.valueOf(uid));
+            clientOdoo.getValuesFromOdoo(uid);
+        }).start();
+
+           /* try {
+                XMLRPCClient client = new XMLRPCClient(new URL(SERVER_URL), XMLRPCClient.FLAGS_FORWARD);
+                client.setLoginData(USERNAME, PASSWORD);
+                client.callAsync(new XMLRPCCallback() {
+                    @Override
+                    public void onResponse(long id, Object result) {
+                        Log.v("Response", result.toString());
+                    }
+
+                    @Override
+                    public void onError(long id, XMLRPCException error) {
+                        error.printStackTrace();
+                        Log.v("Call Error " + id , error.getMessage());
+                    }
+
+                    @Override
+                    public void onServerError(long id, XMLRPCServerException error) {
+                        error.printStackTrace();
+                        Log.v("Server Error " + id, error.getMessage());
+                    }
+                },"authenticate", "odoo_pointage", USERNAME, PASSWORD, "");
+            } catch (Exception ex) {
+                ex.getStackTrace();
+                Log.v("Ex", ex.getMessage());
+            }
+        }*/
+
+        /*xmlrpc.client.callAsync(new XMLRPCCallback() {
+            @Override
+            public void onResponse(long id, Object result) {
+                Log.v("Response", result.toString());
+            }
+
+            @Override
+            public void onError(long id, XMLRPCException error) {
+                Log.v("Call Error " + id , error.getMessage());
+                try {
+                    Log.v("test", xmlrpc.test.getResponseMessage());
+                }
+                catch (IOException e) {
+                    e.printStackTrace();
+                }
+                error.printStackTrace();
+            }
+
+            @Override
+            public void onServerError(long id, XMLRPCServerException error) {
+                Log.v("Server Error " + id, error.getMessage());
+                error.printStackTrace();
+            }
+        },"search_read", "public.hr_attendance");*/
     }
 
     private void initializeViews(){
